@@ -1,9 +1,12 @@
 network_divider v3.1
 
 # Program dzieli sieci na podsieci
+
+![Screenshot](image.png)
+
 Jak ktoś poprosi to zrobie api ;pp
 
-##Exe zawarte w repozytorium!
+## Exe zawarte w repozytorium!
 
 Możliwość generowania sprawdzianów dal leni!
 
