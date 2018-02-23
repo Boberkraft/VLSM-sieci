@@ -122,7 +122,7 @@ class BinNetwork:
 
         :param hosts: Liczba hostów dla których przeznaczona jest ta sieć
         """
-        needed_size = hosts + 1
+        needed_size = hosts + 2
         max_size = 2 ** ceil(log2(needed_size))
         self.mask = 32 - ceil(log2(needed_size))
         network = BinNetwork(self.as_number, self.mask)
@@ -238,8 +238,8 @@ def calculate_subnets(default_network, wanted_subnets):
 def main():
     # test
     network = "192.168.1.255/24"
-    want = """100
-        50
+    want = """
+        64
     """
     error, val = validate(network, want)
     if error:
@@ -250,7 +250,7 @@ def main():
         print('Networks: ')
         for x in subnets:
             pass
-            print(x.network)
+            print(x.network, x.hosts, x.allocated_size, x.mask)
             # generate_raport(network, subnets, 'ans.docx', True)
 
 
