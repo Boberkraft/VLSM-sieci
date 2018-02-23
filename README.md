@@ -6,7 +6,7 @@ network_divider v3.1
 
 Jeżeli ktoś nie chce gui a jedynie część vlsm to zapraszam do pliku vlsm.py
 
-```python3
+```python
 def test():
     network = "192.168.1.255/24"
     needed = """
