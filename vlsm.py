@@ -238,19 +238,23 @@ def calculate_subnets(default_network, wanted_subnets):
 def main():
     # test
     network = "192.168.1.255/24"
-    want = """
+    needed = """
         64
     """
-    error, val = validate(network, want)
+    error, val = validate(network, needed)
     if error:
         print('Wystąpił problem:', val)
     else:
         network, needed_subnets = val
         subnets = calculate_subnets(network, needed_subnets)
         print('Networks: ')
-        for x in subnets:
-            pass
-            print(x.network, x.hosts, x.allocated_size, x.mask)
+        for subnet in subnets:
+            print(subnet.network)
+            print(subnet.broadcast)
+            print(subnet.first_address)
+            print(subnet.last_address)
+            print(subnet.allocated_size)
+            print(subnet.mask)
             # generate_raport(network, subnets, 'ans.docx', True)
 
 
